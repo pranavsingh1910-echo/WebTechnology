@@ -1,0 +1,366 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f7fb;
+    color: #222;
+}
+
+/* NAVBAR */
+
+.navbar {
+    background: #111827;
+    color: white;
+
+    padding: 18px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #60a5fa;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 500px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #1e3a8a,
+        #2563eb
+    );
+
+    color: white;
+
+    padding: 50px 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* BUTTON */
+
+.btn {
+    display: inline-block;
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 12px 25px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+.btn:hover {
+    background: #1d4ed8;
+}
+
+.secondary {
+    background: white;
+    color: #2563eb;
+}
+
+
+/* FEATURES */
+
+.features {
+    padding: 60px 7%;
+
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 32px;
+
+    margin-bottom: 30px;
+}
+
+.feature-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+}
+
+.feature-card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.08);
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+}
+
+
+/* FORMS */
+
+.form-container {
+    max-width: 550px;
+
+    margin: 60px auto;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 25px rgba(0,0,0,0.1);
+}
+
+.form-container h1 {
+    margin-bottom: 10px;
+}
+
+.form-container p {
+    margin: 15px 0;
+}
+
+.form-container label {
+    display: block;
+
+    margin-top: 15px;
+
+    margin-bottom: 5px;
+
+    font-weight: bold;
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+}
+
+.form-container textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.form-container .btn {
+    margin-top: 20px;
+    width: 100%;
+}
+
+
+/* SLABS */
+
+.slabs {
+    margin-top: 30px;
+
+    padding: 20px;
+
+    background: #eef4ff;
+
+    border-radius: 10px;
+}
+
+.slabs p {
+    margin: 8px 0;
+}
+
+
+/* DASHBOARD */
+
+.dashboard {
+    padding: 50px 7%;
+}
+
+.dashboard h1 {
+    margin-bottom: 30px;
+}
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+}
+
+.dashboard-card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.08);
+}
+
+.dashboard-card h2 {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.dashboard-card h3 {
+    margin-bottom: 20px;
+}
+
+
+/* TABLE */
+
+.table-container {
+    padding: 40px 5%;
+
+    overflow-x: auto;
+}
+
+.table-container h1 {
+    margin-bottom: 25px;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: white;
+
+    min-width: 700px;
+}
+
+th,
+td {
+    padding: 14px;
+
+    border-bottom: 1px solid #ddd;
+
+    text-align: left;
+}
+
+th {
+    background: #1e3a8a;
+
+    color: white;
+}
+
+tr:hover {
+    background: #f1f5f9;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #111827;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+
+    margin-top: 40px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .form-container {
+        margin: 30px 15px;
+    }
+
+}

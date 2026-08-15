@@ -1,0 +1,8 @@
+com\mycompany\electricity\LoginServlet.class
+com\mycompany\electricity\LogoutServlet.class
+com\mycompany\electricity\RegisterCustomerServlet.class
+com\mycompany\electricity\DBTestServlet.class
+com\mycompany\electricity\BillServlet.class
+com\mycompany\electricity\DBConnection.class
+com\mycompany\electricitybillmanagement\JakartaRestConfiguration.class
+com\mycompany\electricitybillmanagement\resources\JakartaEE10Resource.class
