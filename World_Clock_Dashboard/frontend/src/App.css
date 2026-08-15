@@ -1,0 +1,732 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+  transition: 0.25s;
+}
+
+.dark {
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      #172554,
+      #020617 45%
+    );
+
+  color: #f8fafc;
+}
+
+.light {
+  background: #eef2f7;
+  color: #0f172a;
+}
+
+/* HEADER */
+
+.header {
+  height: 78px;
+  padding: 0 5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom:
+    1px solid rgba(148, 163, 184, 0.16);
+
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.brand-icon {
+  width: 45px;
+  height: 45px;
+
+  border-radius: 13px;
+
+  display: grid;
+  place-items: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #7c3aed
+    );
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.brand p,
+.muted,
+.panel p {
+  margin: 3px 0;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+
+  font-size: 11px;
+
+  color: #f59e0b;
+}
+
+.status.ok {
+  color: #22c55e;
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 11px;
+
+  border: 1px solid #334155;
+
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  color: inherit;
+}
+
+/* DASHBOARD */
+
+.dashboard {
+  width: min(1250px, 92%);
+
+  margin: auto;
+
+  padding: 28px 0 40px;
+}
+
+/* HERO */
+
+.hero {
+  text-align: center;
+
+  padding: 30px;
+
+  border-radius: 26px;
+
+  background:
+    rgba(15, 23, 42, 0.72);
+
+  border:
+    1px solid rgba(148, 163, 184, 0.15);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.22);
+
+  margin-bottom: 20px;
+}
+
+.light .hero,
+.light .panel {
+  background:
+    rgba(255, 255, 255, 0.8);
+
+  border-color:
+    rgba(15, 23, 42, 0.08);
+}
+
+.live-label {
+  font-size: 11px;
+
+  letter-spacing: 1.5px;
+
+  color: #94a3b8;
+
+  font-weight: 700;
+}
+
+.dot {
+  display: inline-block;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 12px #22c55e;
+
+  margin-right: 6px;
+}
+
+/* ANALOG CLOCK */
+
+.clock-face {
+  position: relative;
+
+  width: 260px;
+  height: 260px;
+
+  margin: 22px auto;
+
+  border: 8px solid #334155;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #1e293b,
+      #020617
+    );
+
+  box-shadow:
+    inset 0 0 30px #000,
+    0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.light .clock-face {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.clock-number {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 30px;
+  height: 30px;
+
+  margin: -15px;
+
+  display: grid;
+  place-items: center;
+
+  font-weight: 700;
+
+  color: #e2e8f0;
+}
+
+.light .clock-number {
+  color: #334155;
+}
+
+.hand {
+  position: absolute;
+
+  left: 50%;
+  bottom: 50%;
+
+  transform-origin:
+    bottom center;
+
+  border-radius: 10px;
+}
+
+.hour {
+  width: 7px;
+  height: 62px;
+
+  margin-left: -3.5px;
+
+  background: white;
+}
+
+.minute {
+  width: 5px;
+  height: 88px;
+
+  margin-left: -2.5px;
+
+  background: #60a5fa;
+}
+
+.second {
+  width: 2px;
+  height: 100px;
+
+  margin-left: -1px;
+
+  background: #ef4444;
+}
+
+.center-dot {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 15px;
+  height: 15px;
+
+  margin: -7.5px;
+
+  border-radius: 50%;
+
+  background: #ef4444;
+
+  border: 3px solid white;
+}
+
+/* DIGITAL TIME */
+
+.main-time {
+  font-size:
+    clamp(40px, 7vw, 68px);
+
+  font-weight: 750;
+
+  letter-spacing: 2px;
+}
+
+.main-date {
+  margin-top: 10px;
+
+  color: #cbd5e1;
+}
+
+.light .main-date {
+  color: #475569;
+}
+
+/* GRID */
+
+.grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+/* PANEL */
+
+.panel {
+  padding: 20px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(15, 23, 42, 0.72);
+
+  border:
+    1px solid rgba(148, 163, 184, 0.14);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.14);
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+.panel-head {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 15px;
+}
+
+.panel h2 {
+  font-size: 16px;
+
+  margin: 0;
+}
+
+.badge {
+  padding: 4px 9px;
+
+  border-radius: 20px;
+
+  background: #1d4ed8;
+
+  color: white;
+
+  font-size: 11px;
+}
+
+/* FORMS */
+
+.add-row,
+.form {
+  display: flex;
+
+  gap: 7px;
+
+  margin-bottom: 12px;
+}
+
+.form {
+  flex-direction: column;
+}
+
+.add-row select,
+.form input,
+.form select {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 10px;
+
+  border:
+    1px solid #334155;
+
+  border-radius: 9px;
+
+  background: #0f172a;
+
+  color: white;
+
+  outline: none;
+}
+
+.light .add-row select,
+.light .form input {
+  background: white;
+
+  color: #0f172a;
+}
+
+.add-row button,
+.form button,
+.button-row button,
+.preset-row button {
+  border: 0;
+
+  border-radius: 9px;
+
+  padding: 9px 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #7c3aed
+    );
+
+  color: white;
+
+  font-weight: 650;
+}
+
+/* WORLD TIME */
+
+.zone-list {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 9px;
+}
+
+.zone-card,
+.list-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 11px;
+
+  border-radius: 12px;
+
+  background:
+    rgba(30, 41, 59, 0.55);
+
+  border:
+    1px solid rgba(148, 163, 184, 0.08);
+}
+
+.light .zone-card,
+.light .list-row {
+  background: #f8fafc;
+}
+
+.flag {
+  font-size: 25px;
+}
+
+.zone-info {
+  flex: 1;
+}
+
+.zone-info strong,
+.zone-info small,
+.list-row strong,
+.list-row small {
+  display: block;
+}
+
+.zone-info small,
+.list-row small {
+  font-size: 10px;
+
+  color: #64748b;
+}
+
+.zone-time {
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+.danger {
+  border: 0;
+
+  background: transparent;
+
+  color: #94a3b8;
+}
+
+.danger:hover {
+  color: #ef4444;
+}
+
+/* LISTS */
+
+.list-row {
+  justify-content: space-between;
+
+  margin-bottom: 8px;
+}
+
+.row-actions {
+  display: flex;
+
+  gap: 7px;
+
+  align-items: center;
+}
+
+/* SWITCH */
+
+.switch {
+  width: 40px;
+  height: 22px;
+
+  border: 0;
+
+  border-radius: 20px;
+
+  background: #475569;
+
+  padding: 0;
+
+  position: relative;
+}
+
+.switch i {
+  position: absolute;
+
+  left: 3px;
+  top: 3px;
+
+  width: 16px;
+  height: 16px;
+
+  background: white;
+
+  border-radius: 50%;
+
+  transition: 0.2s;
+}
+
+.switch.on {
+  background: #2563eb;
+}
+
+.switch.on i {
+  transform:
+    translateX(18px);
+}
+
+/* STOPWATCH / TIMER */
+
+.big-timer {
+  text-align: center;
+
+  font-size: 36px;
+
+  font-weight: 750;
+
+  letter-spacing: 2px;
+
+  margin: 20px 0;
+}
+
+.button-row,
+.preset-row {
+  display: flex;
+
+  gap: 7px;
+
+  justify-content: center;
+
+  margin: 8px 0;
+}
+
+.button-row button:disabled {
+  opacity: 0.4;
+
+  cursor: not-allowed;
+}
+
+.preset-row button {
+  background: #334155;
+}
+
+/* LAPS */
+
+.laps {
+  max-height: 120px;
+
+  overflow: auto;
+
+  margin-top: 10px;
+}
+
+.laps div {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 6px 3px;
+
+  border-bottom:
+    1px solid rgba(148, 163, 184, 0.1);
+
+  font-size: 11px;
+}
+
+/* SETTINGS */
+
+.setting {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  background:
+    rgba(30, 41, 59, 0.5);
+
+  margin-bottom: 8px;
+}
+
+.light .setting {
+  background: #f8fafc;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+
+  color: #64748b;
+
+  font-size: 11px;
+
+  padding: 18px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+
+  .grid {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .wide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 680px) {
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wide {
+    grid-column: span 1;
+  }
+
+  .zone-list {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    padding: 0 4%;
+  }
+
+  .brand p {
+    display: none;
+  }
+
+  .status {
+    display: none;
+  }
+
+  .clock-face {
+    width: 220px;
+    height: 220px;
+  }
+
+  .main-time {
+    font-size: 39px;
+  }
+}
