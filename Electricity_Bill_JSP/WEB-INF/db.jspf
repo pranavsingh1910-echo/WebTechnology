@@ -1,0 +1,10 @@
+<%@ page import="java.sql.*" %>
+<%!
+private Connection getConnection() throws Exception {
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    String url = "jdbc:mysql://localhost:3306/ebill_management_2026?useSSL=false&serverTimezone=Asia/Kolkata";
+    String user = "root";
+    String password = "Pranav@1910";
+    return DriverManager.getConnection(url, user, password);
+}
+%>
