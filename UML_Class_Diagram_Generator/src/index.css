@@ -1,0 +1,1442 @@
+/* =========================================================
+   UML CLASS DIAGRAM GENERATOR
+   Complete index.css
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  height: 100%;
+
+  font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  overflow: hidden;
+}
+
+body {
+  background: #f5f7fb;
+  color: #1e293b;
+}
+
+
+/* =========================================================
+   MAIN APPLICATION
+========================================================= */
+
+.editor-page {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #f5f7fb;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.toolbar {
+  height: 64px;
+  min-height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 22px;
+
+  background: #172033;
+
+  color: white;
+
+  border-bottom: 1px solid #263248;
+
+  z-index: 10;
+}
+
+
+.toolbar-title {
+  font-size: 21px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2px;
+
+  white-space: nowrap;
+}
+
+
+.toolbar-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+}
+
+
+.toolbar-actions button {
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 0 15px;
+
+  border: 1px solid #d7dce5;
+
+  border-radius: 7px;
+
+  background: white;
+
+  color: #172033;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+
+.toolbar-actions button:hover {
+  background: #f1f5f9;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+
+.toolbar-actions button:active {
+  transform: translateY(0);
+}
+
+
+.toolbar-actions .danger-button {
+  background: #ef4444;
+
+  color: white;
+
+  border-color: #ef4444;
+}
+
+
+.toolbar-actions .danger-button:hover {
+  background: #dc2626;
+}
+
+
+/* =========================================================
+   MAIN THREE-COLUMN LAYOUT
+========================================================= */
+
+.main-layout {
+  flex: 1;
+
+  min-width: 0;
+  min-height: 0;
+
+  height: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    300px
+    minmax(0, 1fr)
+    430px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   LEFT PROPERTIES PANEL
+========================================================= */
+
+.properties-panel {
+  min-width: 0;
+  min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding: 22px;
+
+  background: white;
+
+  border-right: 1px solid #dce1e8;
+}
+
+
+.properties-panel::-webkit-scrollbar {
+  width: 7px;
+}
+
+
+.properties-panel::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+
+.properties-panel::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+
+  border-radius: 10px;
+}
+
+
+.properties-panel h2 {
+  margin: 0 0 22px;
+
+  font-size: 24px;
+
+  color: #111827;
+}
+
+
+.properties-panel h3 {
+  margin: 24px 0 12px;
+
+  font-size: 19px;
+
+  color: #111827;
+}
+
+
+.properties-panel hr {
+  margin: 22px 0;
+
+  border: none;
+
+  border-top: 1px solid #d1d5db;
+}
+
+
+/* =========================================================
+   FORM LABELS
+========================================================= */
+
+.properties-panel label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #334155;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.properties-panel input,
+.properties-panel select,
+.properties-panel textarea {
+  width: 100%;
+
+  min-height: 40px;
+
+  padding: 9px 11px;
+
+  margin-bottom: 10px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 7px;
+
+  background: white;
+
+  color: #1e293b;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+
+.properties-panel input:focus,
+.properties-panel select:focus,
+.properties-panel textarea:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+.properties-panel textarea {
+  resize: vertical;
+}
+
+
+/* =========================================================
+   ADD ATTRIBUTE / METHOD BUTTONS
+========================================================= */
+
+.properties-panel button {
+  width: 100%;
+
+  min-height: 40px;
+
+  padding: 9px 12px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+
+
+.properties-panel button:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+}
+
+
+.properties-panel button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   ATTRIBUTE / METHOD LIST ITEMS
+========================================================= */
+
+.attribute-item,
+.method-item,
+.property-item {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 9px;
+
+  padding: 12px;
+
+  background: #f1f5f9;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 7px;
+}
+
+
+.attribute-item span,
+.method-item span,
+.property-item span {
+  min-width: 0;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  font-size: 14px;
+}
+
+
+.attribute-item button,
+.method-item button,
+.property-item button {
+  width: auto;
+
+  min-width: 24px;
+
+  min-height: 24px;
+
+  padding: 2px 7px;
+
+  background: transparent;
+
+  color: #ef4444;
+
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+
+.attribute-item button:hover,
+.method-item button:hover,
+.property-item button:hover {
+  background: #fee2e2;
+
+  color: #dc2626;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   CENTER CANVAS
+========================================================= */
+
+.center-panel {
+  min-width: 0;
+  min-height: 0;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: #ffffff;
+}
+
+
+.uml-canvas {
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+}
+
+
+/* =========================================================
+   REACT FLOW
+========================================================= */
+
+.react-flow {
+  width: 100%;
+  height: 100%;
+}
+
+
+.react-flow__background {
+  background-color: #ffffff;
+}
+
+
+.react-flow__controls {
+  box-shadow:
+    0 3px 10px rgba(15, 23, 42, 0.15);
+}
+
+
+.react-flow__controls-button {
+  background: white;
+
+  border-bottom: 1px solid #e2e8f0;
+
+  color: #1e293b;
+}
+
+
+.react-flow__controls-button:hover {
+  background: #f1f5f9;
+}
+
+
+.react-flow__minimap {
+  border: 1px solid #cbd5e1;
+
+  border-radius: 6px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 3px 10px rgba(15, 23, 42, 0.12);
+}
+
+
+/* =========================================================
+   UML CLASS NODE
+========================================================= */
+
+.uml-class-node {
+  min-width: 280px;
+
+  max-width: 420px;
+
+  background: white;
+
+  border: 2px solid #1e293b;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  color: #111827;
+
+  box-shadow:
+    0 8px 22px rgba(15, 23, 42, 0.16);
+
+  transition:
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+
+.uml-class-node:hover {
+  box-shadow:
+    0 12px 28px rgba(15, 23, 42, 0.22);
+}
+
+
+/* =========================================================
+   UML CLASS HEADER
+========================================================= */
+
+.uml-class-header {
+  min-height: 70px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 14px 20px;
+
+  background: linear-gradient(
+    135deg,
+    #eef2ff,
+    #e0e7ff
+  );
+
+  border-bottom: 2px solid #1e293b;
+}
+
+
+.uml-class-name {
+  font-size: 24px;
+
+  font-weight: 700;
+
+  color: #111827;
+
+  text-align: center;
+
+  letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   UML ATTRIBUTES SECTION
+========================================================= */
+
+.uml-attributes {
+  padding: 12px 16px;
+
+  min-height: 55px;
+
+  background: white;
+}
+
+
+/* =========================================================
+   UML METHODS SECTION
+   CLEAR SEPARATOR
+========================================================= */
+
+.uml-methods {
+  padding: 12px 16px;
+
+  min-height: 55px;
+
+  background: #f8fafc;
+
+  border-top: 3px solid #1e293b;
+}
+
+
+/* =========================================================
+   UML MEMBER
+========================================================= */
+
+.uml-member {
+  display: flex;
+
+  align-items: center;
+
+  min-height: 32px;
+
+  padding: 4px 0;
+
+  font-size: 15px;
+
+  color: #1f2937;
+
+  white-space: nowrap;
+}
+
+
+.uml-member:hover {
+  background: #f1f5f9;
+
+  border-radius: 4px;
+}
+
+
+/* =========================================================
+   UML VISIBILITY
+========================================================= */
+
+.uml-visibility {
+  width: 22px;
+
+  flex-shrink: 0;
+
+  font-size: 19px;
+
+  font-weight: 700;
+
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   UML MEMBER NAME
+========================================================= */
+
+.uml-member-name {
+  font-weight: 500;
+
+  margin-right: 2px;
+}
+
+
+/* =========================================================
+   UML COLON
+========================================================= */
+
+.uml-colon {
+  margin: 0 5px;
+
+  color: #64748b;
+}
+
+
+/* =========================================================
+   UML TYPE
+========================================================= */
+
+.uml-type {
+  color: #475569;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   UML METHOD BRACKETS
+========================================================= */
+
+.uml-bracket {
+  color: #64748b;
+}
+
+
+/* =========================================================
+   UML PARAMETERS
+========================================================= */
+
+.uml-parameters {
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   EMPTY UML SECTION
+========================================================= */
+
+.uml-empty {
+  padding: 8px 0;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   UML CONNECTION HANDLES
+========================================================= */
+
+.uml-handle {
+  width: 10px !important;
+
+  height: 10px !important;
+
+  background: #1e293b !important;
+
+  border: 2px solid white !important;
+}
+
+
+/* =========================================================
+   RIGHT JAVA CODE PANEL
+========================================================= */
+
+.right-panel {
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #111827;
+
+  color: white;
+
+  border-left: 1px solid #1f2937;
+}
+
+
+/* =========================================================
+   CODE TABS
+========================================================= */
+
+.code-tabs {
+  display: flex;
+
+  height: 42px;
+
+  min-height: 42px;
+
+  overflow-x: auto;
+
+  background: #1f2937;
+
+  border-bottom: 1px solid #374151;
+}
+
+
+.code-tab {
+  min-width: 110px;
+
+  padding: 0 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #1f2937;
+
+  color: #cbd5e1;
+
+  border: none;
+
+  border-right: 1px solid #374151;
+
+  cursor: pointer;
+
+  font-size: 13px;
+}
+
+
+.code-tab:hover {
+  background: #374151;
+}
+
+
+.code-tab.active {
+  background: #111827;
+
+  color: white;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   CODE HEADER
+========================================================= */
+
+.code-header {
+  height: 48px;
+
+  min-height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 12px;
+
+  background: #1f2937;
+
+  border-bottom: 1px solid #374151;
+}
+
+
+.code-header h3 {
+  margin: 0;
+
+  font-size: 16px;
+
+  font-weight: 600;
+}
+
+
+.code-header button {
+  padding: 7px 12px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 6px;
+
+  background: white;
+
+  color: #111827;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.code-header button:hover {
+  background: #f1f5f9;
+}
+
+
+/* =========================================================
+   CODE EDITOR
+========================================================= */
+
+.code-editor {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow: auto;
+
+  background: #111827;
+}
+
+
+.code-editor pre {
+  margin: 0;
+
+  min-height: 100%;
+
+  padding: 18px;
+
+  font-family:
+    "Consolas",
+    "Courier New",
+    monospace;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  color: #e5e7eb;
+
+  white-space: pre;
+
+  tab-size: 4;
+}
+
+
+.code-editor textarea {
+  width: 100%;
+
+  height: 100%;
+
+  min-height: 300px;
+
+  padding: 18px;
+
+  resize: none;
+
+  border: none;
+
+  outline: none;
+
+  background: #111827;
+
+  color: #e5e7eb;
+
+  font-family:
+    "Consolas",
+    "Courier New",
+    monospace;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   CODE SCROLLBAR
+========================================================= */
+
+.code-editor::-webkit-scrollbar {
+  width: 8px;
+
+  height: 8px;
+}
+
+
+.code-editor::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+
+.code-editor::-webkit-scrollbar-thumb {
+  background: #4b5563;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   RELATIONSHIP PANEL
+========================================================= */
+
+.relationship-panel {
+  padding: 20px;
+
+  background: white;
+
+  border-top: 1px solid #e2e8f0;
+}
+
+
+.relationship-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 15px;
+}
+
+
+.relationship-header h3 {
+  margin: 0;
+
+  font-size: 18px;
+}
+
+
+.relationship-header button {
+  width: auto;
+
+  padding: 8px 13px;
+}
+
+
+/* =========================================================
+   RELATIONSHIP ITEMS
+========================================================= */
+
+.relationship-item {
+  padding: 12px;
+
+  margin-bottom: 8px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 7px;
+
+  font-size: 14px;
+}
+
+
+.relationship-item strong {
+  color: #1e293b;
+}
+
+
+/* =========================================================
+   CHECKBOXES
+========================================================= */
+
+.checkbox-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin: 10px 0;
+}
+
+
+.checkbox-row input {
+  width: auto;
+
+  min-height: auto;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   GENERAL BUTTONS
+========================================================= */
+
+button {
+  font-family: inherit;
+}
+
+
+button:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  color: #64748b;
+
+  text-align: center;
+}
+
+
+.empty-state h2 {
+  margin: 0;
+
+  color: #334155;
+
+  font-size: 22px;
+}
+
+
+.empty-state p {
+  margin: 0;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .main-layout {
+    grid-template-columns:
+      260px
+      minmax(0, 1fr)
+      350px;
+  }
+
+  .toolbar-title {
+    font-size: 18px;
+  }
+
+  .toolbar-actions button {
+    padding: 0 10px;
+  }
+
+  .toolbar-actions button span {
+    display: none;
+  }
+
+}
+
+
+@media (max-width: 800px) {
+
+  .main-layout {
+    grid-template-columns:
+      220px
+      minmax(0, 1fr);
+  }
+
+  .right-panel {
+    display: none;
+  }
+
+  .toolbar {
+    padding: 0 12px;
+  }
+
+  .toolbar-title {
+    font-size: 16px;
+  }
+
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+  background: #bfdbfe;
+
+  color: #111827;
+
+  /* =========================================================
+   RELATIONSHIP PANEL
+========================================================= */
+
+.relationship-panel {
+  padding: 18px 20px;
+
+  background: #ffffff;
+
+  border-top: 1px solid #e2e8f0;
+}
+
+
+.relationship-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 15px;
+}
+
+
+.relationship-header h3 {
+  margin: 0;
+
+  font-size: 19px;
+
+  color: #111827;
+}
+
+
+.relationship-panel label {
+  display: block;
+
+  margin-top: 10px;
+  margin-bottom: 5px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #334155;
+}
+
+
+.relationship-panel select,
+.relationship-panel input {
+  width: 100%;
+
+  height: 40px;
+
+  padding: 8px 10px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 7px;
+
+  background: white;
+
+  font-size: 14px;
+
+  outline: none;
+}
+
+
+.relationship-panel select:focus,
+.relationship-panel input:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(37, 99, 235, 0.12);
+}
+
+
+.relationship-panel > button {
+  margin-top: 14px;
+
+  width: 100%;
+
+  height: 40px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.relationship-panel > button:hover {
+  background: #1d4ed8;
+}
+
+
+/* =========================================================
+   RELATIONSHIP LIST
+========================================================= */
+
+.relationship-list {
+  margin-top: 18px;
+}
+
+
+.relationship-item {
+  position: relative;
+
+  padding: 11px 38px 11px 12px;
+
+  margin-bottom: 8px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 7px;
+
+  font-size: 14px;
+}
+
+
+.relationship-info {
+  margin-top: 4px;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+
+.relationship-delete {
+  position: absolute;
+
+  top: 8px;
+
+  right: 8px;
+
+  width: 25px;
+
+  height: 25px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #ef4444;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+
+.relationship-delete:hover {
+  color: #dc2626;
+}
+
+
+.relationship-empty {
+  margin: 10px 0;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  font-style: italic;
+}
+/* =========================================================
+   LANGUAGE SELECTOR
+========================================================= */
+
+.language-selector {
+  display: flex;
+
+  gap: 6px;
+
+  padding: 10px;
+
+  background: #1f2937;
+
+  border-bottom: 1px solid #374151;
+}
+
+
+.language-selector button {
+  flex: 1;
+
+  padding: 8px 10px;
+
+  border: 1px solid #475569;
+
+  border-radius: 6px;
+
+  background: #374151;
+
+  color: #cbd5e1;
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+.language-selector button:hover {
+  background: #475569;
+
+  color: white;
+}
+
+
+.language-selector button.active {
+  background: #2563eb;
+
+  border-color: #2563eb;
+
+  color: white;
+}
+
+
+/* =========================================================
+   FILE TABS
+========================================================= */
+
+.file-tabs {
+  display: flex;
+
+  min-height: 40px;
+
+  overflow-x: auto;
+
+  background: #111827;
+
+  border-bottom: 1px solid #374151;
+}
+
+
+.file-tabs button {
+  flex-shrink: 0;
+
+  padding: 8px 14px;
+
+  border: none;
+
+  border-right: 1px solid #374151;
+
+  background: #1f2937;
+
+  color: #cbd5e1;
+
+  cursor: pointer;
+
+  font-size: 12px;
+}
+
+
+.file-tabs button:hover {
+  background: #374151;
+}
+
+
+.file-tabs button.active-file {
+  background: #111827;
+
+  color: white;
+
+  font-weight: 600;
+
+  border-bottom: 2px solid #2563eb;
+}
+}
